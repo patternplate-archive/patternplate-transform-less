@@ -1,3 +1,13 @@
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/sinnerschrader/patternplate-transform-less/compare/v0.1.0...v0.2.0) (2016-06-16)
+
+
+### Features
+
+* update less 2.5 => 2.7 ([61d4011](https://github.com/sinnerschrader/patternplate-transform-less/commit/61d4011))
+
+
+
 <a name="0.1.0"></a>
 # 0.1.0 (2016-02-15)
 
