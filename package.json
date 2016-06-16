@@ -77,7 +77,7 @@
     "watch": "0.17.1"
   },
   "dependencies": {
-    "less": "2.6.0",
+    "less": "2.7.1",
     "less-plugin-autoprefix": "1.5.1",
     "less-plugin-clean-css": "1.5.1",
     "less-plugin-npm-import": "2.1.0",
