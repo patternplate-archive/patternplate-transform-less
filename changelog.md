@@ -1,3 +1,13 @@
+<a name="0.2.1"></a>
+## [0.2.1](https://github.com/sinnerschrader/patternplate-transform-less/compare/v0.2.0...v0.2.1) (2016-09-26)
+
+
+### Bug Fixes
+
+* allow config without .plugins key ([8e735bb](https://github.com/sinnerschrader/patternplate-transform-less/commit/8e735bb)), closes [patternplate/sinnerschrader#92](https://github.com/patternplate/sinnerschrader/issues/92)
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/sinnerschrader/patternplate-transform-less/compare/v0.1.0...v0.2.0) (2016-06-16)
 
