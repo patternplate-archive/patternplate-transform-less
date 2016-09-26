@@ -28,7 +28,7 @@ export default function lessTransformFactory(application) {
 		const patternPath = resolve(application.runtime.patterncwd || application.runtime.cwd, application.configuration.patterns.path);
 		const dependencies = getDependencies(file);
 
-		const plugins = Object.keys(config.plugins)
+		const plugins = Object.keys(config.plugins || {})
 			.map(pluginName => config.plugins[pluginName].enabled ? pluginName : false)
 			.filter(item => item);
 
