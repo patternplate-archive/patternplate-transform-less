@@ -80,6 +80,6 @@
     "less-plugin-autoprefix": "1.5.1",
     "less-plugin-clean-css": "1.5.1",
     "less-plugin-npm-import": "2.1.0",
-    "less-plugin-pattern-import": "0.1.1"
+    "less-plugin-pattern-import": "0.1.2"
   }
 }
