@@ -1,3 +1,13 @@
+<a name="0.2.3"></a>
+## [0.2.3](https://github.com/sinnerschrader/patternplate-transform-less/compare/v0.2.2...v0.2.3) (2016-10-11)
+
+
+### Bug Fixes
+
+* harden against missing opts key ([3b6e499](https://github.com/sinnerschrader/patternplate-transform-less/commit/3b6e499))
+
+
+
 <a name="0.2.2"></a>
 ## [0.2.2](https://github.com/sinnerschrader/patternplate-transform-less/compare/v0.2.1...v0.2.2) (2016-09-29)
 
