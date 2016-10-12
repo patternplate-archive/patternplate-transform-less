@@ -25,7 +25,7 @@ export default function lessTransformFactory(application) {
 
 	return async function lessTransform(file, demo, configuration) {
 		const config = Object.assign({opts: {}}, configuration);
-		const patternPath = resolve(application.runtime.patterncwd || application.runtime.cwd, application.configuration.patterns.path);
+		const patternPath = resolve(application.runtime.patterncwd || application.runtime.cwd, 'patterns');
 		const dependencies = getDependencies(file);
 
 		const plugins = Object.keys(config.plugins || {})
