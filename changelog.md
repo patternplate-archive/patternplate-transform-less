@@ -1,3 +1,8 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/sinnerschrader/patternplate-transform-less/compare/v0.2.5...v2.0.0) (2016-10-14)
+
+
+
 <a name="0.2.5"></a>
 ## [0.2.5](https://github.com/sinnerschrader/patternplate-transform-less/compare/v0.2.4...v0.2.5) (2016-10-12)
 
