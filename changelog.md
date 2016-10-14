@@ -1,3 +1,13 @@
+<a name="2.0.1"></a>
+## [2.0.1](https://github.com/sinnerschrader/patternplate-transform-less/compare/v0.2.5...v2.0.1) (2016-10-14)
+
+
+### Bug Fixes
+
+* win32 compat ([79552f8](https://github.com/sinnerschrader/patternplate-transform-less/commit/79552f8))
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/sinnerschrader/patternplate-transform-less/compare/v0.2.5...v2.0.0) (2016-10-14)
 
