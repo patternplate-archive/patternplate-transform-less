@@ -69,7 +69,7 @@ module.exports = {
 ## See also
 
 * [patternplate](https://github.com/sinnerschrader/patternplate) - Create, show and deliver component libraries
-* [transform-sass](https://github.com/sinnerschrader/patternplate-transform-sass) - Process SASS to CSS
+* [transform-sass](https://github.com/marionebl/patternplate-transform-sass) - Process SASS to CSS
 * [transform-postcss](https://github.com/sinnerschrader/patternplate-transform-postcss) - Process CSS via PostCSS
 
 ---
@@ -80,6 +80,6 @@ Copyright 2016 by [SinnerSchrader Deutschland GmbH](https://github.com/sinnersch
 [2]: https://img.shields.io/npm/v/patternplate-transform-less.svg?style=flat-square
 [3]: https://npmjs.org/package/patternplate-transform-less
 [4]: https://img.shields.io/travis/sinnerschrader/patternplate-transform-less/master.svg?style=flat-square
-[5]: https://travis-ci.org/marionebl/patternplate-transform-less
-[6]: https://img.shields.io/appveyor/ci/sinnerschrader/patternplate-transform-less/master.svg?style=flat-square
+[5]: https://travis-ci.org/sinnerschrader/patternplate-transform-less
+[6]: https://img.shields.io/appveyor/ci/marionebl/patternplate-transform-less/master.svg?style=flat-square
 [7]: https://ci.appveyor.com/project/marionebl/patternplate-transform-less
