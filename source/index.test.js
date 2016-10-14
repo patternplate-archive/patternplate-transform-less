@@ -1,6 +1,3 @@
-import 'babel-register';
-import 'babel-polyfill';
-
 import test from 'ava';
 import expect from 'unexpected';
 import factory from '../source';
