@@ -1,0 +1,9 @@
+[ignore]
+.*/node_modules/.*/test/.*
+
+[include]
+
+[libs]
+
+[options]
+module.ignore_non_literal_requires=true
