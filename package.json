@@ -1,21 +1,22 @@
 {
   "name": "patternplate-transform-less",
-  "version": "0.2.5",
+  "version": "1.0.0",
   "description": "patternplate transform creating css from less sources",
   "main": "distribution/index.js",
   "files": [
     "distribution"
   ],
   "scripts": {
-    "start": "npm run watch",
-    "watch": "npm run build -- --watch",
-    "test": "npm run deps && npm run lint",
+    "start": "flow > /dev/null & npm run watch",
+    "watch": "npm run test -- --watch",
+    "pretest": "npm run deps && npm run lint",
+    "test": "ava",
     "clean": "rm -rf distribution",
     "prepare": "mkdir -p distribution",
     "prebuild": "npm run clean npm run prepare",
     "build": "babel source --out-dir distribution",
     "lint": "xo source/",
-    "deps": "dependency-check . --missing && dependency-check . --extra --no-dev -i less-plugin-autoprefix -i less-plugin-clean-css",
+    "deps": "npm run build && dependency-check . --missing && dependency-check . --extra --no-dev -i less-plugin-autoprefix -i less-plugin-clean-css",
     "commit": "git-cz",
     "commitmsg": "conventional-changelog-lint -e",
     "changelog": "conventional-changelog --preset angular --infile changelog.md --same-file --output-unreleased",
@@ -25,13 +26,17 @@
     "version": "npm run changelog && git add . && echo \"$(conventional-changelog -p angular)\"",
     "postversion": "git tag -d v$npm_package_version && git commit --amend -m \"chore(release): $npm_package_version\n$(conventional-changelog -p angular)\" && git tag -a v$npm_package_version -m \"$(conventional-changelog -p angular)\""
   },
+  "ava": {
+    "babel": "inherit"
+  },
   "babel": {
     "presets": [
       "es2015-node4",
       "stage-0"
     ],
     "plugins": [
-      "add-module-exports"
+      "add-module-exports",
+      "transform-flow-comments"
     ]
   },
   "repository": {
@@ -61,25 +66,22 @@
     "MIT"
   ],
   "devDependencies": {
-    "babel-cli": "6.4.0",
-    "babel-plugin-add-module-exports": "0.1.2",
-    "babel-preset-es2015-node4": "2.0.3",
-    "babel-preset-stage-0": "6.3.13",
-    "commitizen": "2.7.3",
+    "ava": "0.16.0",
+    "babel-cli": "6.16.0",
+    "babel-plugin-add-module-exports": "0.2.1",
+    "babel-plugin-transform-flow-comments": "^6.17.0",
+    "babel-preset-es2015-node4": "2.1.0",
+    "babel-preset-stage-0": "6.16.0",
     "conventional-changelog-cli": "1.1.1",
-    "conventional-changelog-lint": "0.3.2",
     "conventional-recommended-bump": "0.1.0",
-    "cz-conventional-changelog": "1.1.5",
-    "cz-conventional-changelog-lint": "0.1.3",
     "dependency-check": "2.6.0",
-    "husky": "0.11.8",
-    "xo": "0.16.0"
+    "flow-bin": "^0.33.0",
+    "unexpected": "^10.18.1",
+    "xo": "0.17.0"
   },
   "dependencies": {
     "less": "2.7.1",
-    "less-plugin-autoprefix": "1.5.1",
-    "less-plugin-clean-css": "1.5.1",
-    "less-plugin-npm-import": "2.1.0",
-    "less-plugin-pattern-import": "0.1.2"
+    "lodash": "^4.16.4",
+    "n-resolve": "^1.0.0"
   }
 }
