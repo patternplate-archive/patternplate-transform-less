@@ -21,9 +21,9 @@ export default function lessTransformFactory(): Function {
 			.filter(entry => entry[1].enabled)
 			.map(async entry => {
 				const [name, config] = entry;
-				const resolved = await nResolve(name);
+				const resolved = await nResolve(`less-plugin-${name}`);
 				const Plugin = require(resolved);
-				return new Plugin(config);
+				return new Plugin(config.opts || {});
 			});
 
 		const plugins = await Promise.all(pluginJobs);
