@@ -1,5 +1,8 @@
-# patternplate-transform-less
-[patternplate](/sinnerschrader/patternplate) patternplate transform creating css from less sources
+# patternplate-transform-less [![stability][0]][1]
+
+[![npm version][2]][3] [![Travis branch][4]][5] [![Appveyor branch][6]][7]
+
+Process LESS with patternplate.
 
 ## Installation
 ```shell
@@ -71,3 +74,12 @@ module.exports = {
 
 ---
 Copyright 2016 by [SinnerSchrader Deutschland GmbH](https://github.com/sinnerschrader) and [contributors](./graphs/contributors). Released under the [MIT license]('./license.md').
+
+[0]: https://img.shields.io/badge/stability-stable-green.svg?style=flat-square
+[1]: https://nodejs.org/api/documentation.html#documentation_stability_index
+[2]: https://img.shields.io/npm/v/patternplate-transform-less.svg?style=flat-square
+[3]: https://npmjs.org/package/patternplate-transform-less
+[4]: https://img.shields.io/travis/sinnerschrader/patternplate-transform-less/master.svg?style=flat-square
+[5]: https://travis-ci.org/marionebl/patternplate-transform-less
+[6]: https://img.shields.io/appveyor/ci/sinnerschrader/patternplate-transform-less/master.svg?style=flat-square
+[7]: https://ci.appveyor.com/project/marionebl/patternplate-transform-less

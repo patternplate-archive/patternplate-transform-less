@@ -1,7 +1,7 @@
 {
   "name": "patternplate-transform-less",
   "version": "2.0.0",
-  "description": "patternplate transform creating css from less sources",
+  "description": "Process LESS with patternplate",
   "main": "distribution/index.js",
   "files": [
     "distribution"
