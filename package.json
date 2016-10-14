@@ -1,7 +1,7 @@
 {
   "name": "patternplate-transform-less",
   "version": "2.0.0",
-  "description": "patternplate transform creating css from less sources",
+  "description": "Process LESS with patternplate",
   "main": "distribution/index.js",
   "files": [
     "distribution"
@@ -27,7 +27,10 @@
     "postversion": "git tag -d v$npm_package_version && git commit --amend -m \"chore(release): $npm_package_version\n$(conventional-changelog -p angular)\" && git tag -a v$npm_package_version -m \"$(conventional-changelog -p angular)\""
   },
   "ava": {
-    "babel": "inherit"
+    "babel": "inherit",
+    "require": [
+      "babel-register"
+    ]
   },
   "babel": {
     "presets": [
@@ -72,6 +75,7 @@
     "babel-plugin-transform-flow-comments": "^6.17.0",
     "babel-preset-es2015-node4": "2.1.0",
     "babel-preset-stage-0": "6.16.0",
+    "babel-register": "^6.16.3",
     "conventional-changelog-cli": "1.1.1",
     "conventional-recommended-bump": "0.1.0",
     "dependency-check": "2.6.0",

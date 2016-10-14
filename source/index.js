@@ -21,9 +21,9 @@ export default function lessTransformFactory(): Function {
 			.filter(entry => entry[1].enabled)
 			.map(async entry => {
 				const [name, config] = entry;
-				const resolved = await nResolve(name);
+				const resolved = await nResolve(`less-plugin-${name}`);
 				const Plugin = require(resolved);
-				return new Plugin(config);
+				return new Plugin(config.opts || {});
 			});
 
 		const plugins = await Promise.all(pluginJobs);
@@ -71,7 +71,7 @@ function getLoader(file: File, pool: File[]): (fileName: string, dirName: string
 		const base = dirName ? getBase(dirName, pool) : file;
 
 		if (!base) {
-			throw new Error(`Could not determine pattern for ${dirName}. Most likely this is a bug in patternplate-transform-less.`);
+			throw new Error(`Could not determine pattern for ${dirName}. Most likely this is a bug in patternplate-transform-less. Available: ${pool.map(i => i.path)}`);
 		}
 
 		if (!(fileName in base.dependencies)) {
@@ -87,7 +87,7 @@ function getLoader(file: File, pool: File[]): (fileName: string, dirName: string
 
 /** Get file matching <dirName> from a pool of <File>[] */
 function getBase(dirName: string, pool: File[]): ?File {
-	return pool.find(item => `${path.dirname(item.path)}/` === path.normalize(dirName));
+	return pool.find(item => path.normalize(`${path.dirname(item.path)}/`) === path.normalize(dirName));
 }
 
 /** Flatten a file.dependencies tree into a pool of available files */
