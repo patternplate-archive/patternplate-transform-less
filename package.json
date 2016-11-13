@@ -85,24 +85,26 @@
   "devDependencies": {
     "ava": "0.16.0",
     "babel-cli": "6.16.0",
-    "babel-eslint": "^7.1.0",
+    "babel-eslint": "7.1.0",
     "babel-plugin-add-module-exports": "0.2.1",
-    "babel-plugin-transform-flow-comments": "^6.17.0",
+    "babel-plugin-transform-flow-comments": "6.17.0",
     "babel-preset-es2015-node4": "2.1.0",
     "babel-preset-stage-0": "6.16.0",
-    "babel-register": "^6.16.3",
+    "babel-register": "6.16.3",
     "conventional-changelog-cli": "1.1.1",
     "conventional-recommended-bump": "0.1.0",
     "dependency-check": "2.6.0",
-    "eslint-plugin-flowtype": "^2.25.0",
-    "eslint-plugin-flowtype-errors": "^1.5.0",
-    "flow-bin": "^0.33.0",
-    "unexpected": "^10.18.1",
-    "xo": "^0.17.1"
+    "eslint-plugin-flowtype": "2.25.0",
+    "eslint-plugin-flowtype-errors": "1.5.0",
+    "flow-bin": "0.33.0",
+    "less-plugin-npm-import": "2.1.0",
+    "normalize.css": "5.0.0",
+    "unexpected": "10.18.1",
+    "xo": "0.17.1"
   },
   "dependencies": {
     "less": "2.7.1",
-    "lodash": "^4.16.4",
-    "n-resolve": "^1.0.0"
+    "lodash": "4.16.4",
+    "resolve": "1.1.7"
   }
 }
