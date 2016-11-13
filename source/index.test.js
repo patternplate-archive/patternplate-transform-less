@@ -47,6 +47,17 @@ test('it should transform less files with pattern dependencies', async () => {
 	expect(file.buffer, 'to be', `.foo {\n  color: red;\n}\n.bar {\n  color: green;\n}\n`);
 });
 
+test('it should fail for less files with npm dependencies by default', async t => {
+	const transform = factory(mocks.application);
+	t.throws(transform(mocks.npmDependentFile), /'npm:\/\/normalize.css' wasn't found/);
+});
+
+test('it transform less files with npm dependencies when configured with npm plugin', async () => {
+	const transform = factory(mocks.application);
+	const {buffer: actual} = await transform(mocks.npmDependentFile, null, mocks.npmConfig);
+	expect(actual.split('\n').length, 'to be greater than', 3);
+});
+
 test('it should fail for less files with missing dependencies', async t => {
 	const transform = factory(mocks.application);
 	const file = mocks.missingDependenciesFile;

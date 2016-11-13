@@ -32,6 +32,15 @@ export const application = {
 	}
 };
 
+export const npmConfig = {
+	plugins: {
+		'npm-import': {
+			enabled: true,
+			opts: {}
+		}
+	}
+};
+
 export const emptyFile = getFile({
 	buffer: new Buffer('')
 });
@@ -47,6 +56,11 @@ export const dependentFile = getFile({
 	dependencies: {
 		simple: simpleFile
 	}
+});
+
+export const npmDependentFile = getFile({
+	path: 'mocks/npm-dependent/index.less',
+	buffer: new Buffer('@import (less) "npm://normalize.css";')
 });
 
 export const missingDependenciesFile = getFile({
