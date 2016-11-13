@@ -1,6 +1,6 @@
 {
   "name": "patternplate-transform-less",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Process LESS with patternplate",
   "main": "distribution/index.js",
   "files": [
