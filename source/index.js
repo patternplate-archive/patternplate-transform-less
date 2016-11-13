@@ -8,7 +8,7 @@ import nResolve from 'n-resolve';
 const defaults = {opts: {}, plugins: {}};
 
 export default function lessTransformFactory(): Function {
-	return async function lessTransform(file: File, _: File, configuration: Config): Promise<File> {
+	return async function (file: File, _: File, configuration: Config): Promise<File> {
 		const config: Config = {...defaults, ...configuration};
 
 		const source = Buffer.isBuffer(file.buffer) ?
@@ -22,7 +22,7 @@ export default function lessTransformFactory(): Function {
 			.map(async entry => {
 				const [name, config] = entry;
 				const resolved = await nResolve(`less-plugin-${name}`);
-				const Plugin = require(resolved);
+				const Plugin = require(resolved); // eslint-disable-line import/no-dynamic-require
 				return new Plugin(config.opts || {});
 			});
 
@@ -99,18 +99,18 @@ function flatten(file: File, seed = []): File[] {
 		], seed)];
 }
 
-/** patternplate-transform-less configuration*/
-type Config = {
+/** patternplate-transform-less configuration */
+type Config = { // eslint-disable-line no-undef
 	opts: {
 		[key: string]: any;
 	},
 	plugins: {
-		[key: string]: PluginConfig
+		[key: string]: PluginConfig;
 	}
 };
 
-/** patternplate-transform-less less-plugin configuration*/
-type PluginConfig = {
+/** patternplate-transform-less less-plugin configuration */
+type PluginConfig = { // eslint-disable-line no-undef
 	enabled: boolean;
 	opts?: {
 		[key: string]: any;
@@ -129,11 +129,11 @@ type FileDependencies = {
 	[localName: string]: File;
 }
 
-type LessFile = {
+type LessFile = { // eslint-disable-line no-undef
 	contents: string;
 	filename: string;
 }
 
-type LessPlugin = {
+type LessPlugin = { // eslint-disable-line no-undef
 	install: Function;
 };
