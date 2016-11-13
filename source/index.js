@@ -1,9 +1,10 @@
 /* @flow */
 /* eslint-disable no-use-before-define */
+import url from 'url';
 import path from 'path';
 import {values, entries} from 'lodash';
 import less, {FileManager} from 'less';
-import nResolve from 'n-resolve';
+import resolve from 'resolve';
 
 const defaults = {opts: {}, plugins: {}};
 
@@ -21,7 +22,7 @@ export default function lessTransformFactory(): Function {
 			.filter(entry => entry[1].enabled)
 			.map(async entry => {
 				const [name, config] = entry;
-				const resolved = await nResolve(`less-plugin-${name}`);
+				const resolved = resolve.sync(`less-plugin-${name}`);
 				const Plugin = require(resolved); // eslint-disable-line import/no-dynamic-require
 				return new Plugin(config.opts || {});
 			});
@@ -47,7 +48,15 @@ function getImporter(file: File): LessPlugin {
 		install(_, pluginManager) {
 			const manager = new FileManager();
 
-			manager.supports = () => true;
+			manager.supports = (filePath, dirName) => {
+				try {
+					const parsed = url.parse(filePath || '');
+					return !parsed.protocol && !dirName.includes('node_modules');
+				} catch (err) {
+					return false;
+				}
+			};
+
 			manager.supportsSync = () => true;
 
 			manager.loadFile = async (...args) => {
