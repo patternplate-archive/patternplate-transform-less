@@ -1,5 +1,7 @@
 # patternplate-transform-less [![stability][0]][1]
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/sinnerschrader/patternplate-transform-less.svg)](https://greenkeeper.io/)
+
 [![npm version][2]][3] [![Travis branch][4]][5] [![Appveyor branch][6]][7]
 
 Process LESS with patternplate.
